@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "FILE COLLAPSE BOT",
+  "description": "This extension helps collapse/expand files on github pull request review page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    { 
+      "matches": ["*://github.com/*"],
+      "js": ["src/run.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

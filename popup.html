@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style id="stndz-style"></style>
+    <title>FILE COLLAPSE BOT</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+      h1 {
+        font-size: 15px;
+      }
+      #container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    </style>
+    <script src="./src/main.js"></script>
+  </head>
+
+  <body>
+    <h1>Collapse bot</h1>
+    <div id="container">
+      <div>
+        <label>Filter:</label><input id="keyword-input" type="text" value="_test.js" />
+      </div>
+      <div>
+        <label>Regex</label>
+        <input type="checkbox" id="regex-enabled" />
+      </div>
+      <button id="collapse-btn">collapse</button>
+      <button id="expand-btn">expand</button>
+    </div>
+  </body>
+</html>
