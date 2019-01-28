@@ -16,7 +16,15 @@ chrome.runtime.onMessage.addListener(
       domList = document.querySelectorAll(`.file-header[data-path*="${keyword}"] button[aria-expanded=${isCollapse ? 'true' : 'false'}]`);
     }
 
-    domList.forEach(dom => dom && dom.click());
+    domList.forEach(dom => {
+      if (!dom) {
+        return;
+      }
+
+      dom.click();
+      // Seems like there is a bug on github page that aria-expanded is not updated correctly, so let's update it here 
+      dom.setAttribute('aria-expanded', !isCollapse);
+    });
 
     // Note: Returning true is required here!
     // ref: http://stackoverflow.com/questions/20077487/chrome-extension-message-passing-response-not-sent
